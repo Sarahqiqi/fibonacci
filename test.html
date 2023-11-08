@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibonacci</title>
+</head>
+<body>
+    <h1> fibonacci sequence </h1>
+    <label for="inputNumber">عضو چندم را نشان بدهم:</label>
+    <input type="number" id="inputNumber" min="1" value="">
+    <button onclick="fibomem()">نمایش</button>
+    <p id="fibonacci-member"></p>
+
+    <script>
+        function fibomem() {
+            var n = parseInt(document.getElementById("inputNumber").value);
+            var i = Fibo(n);
+            document.getElementById("fibonacci-member").innerHTML = "member" + n +" m "+ " : " + i;
+        }
+
+        function Fibo(n) {
+            var fib = [0, 1];
+            for (var i = 2; i < n; i++) {
+                fib[i] = fib[i - 1] + fib[i - 2];
+            }
+            return fib[n - 1];
+        }
+    </script>
+</body>
+</html>
